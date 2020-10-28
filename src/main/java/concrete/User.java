@@ -51,7 +51,7 @@ public class User {
 	}
 
 	public String getUsr() {
-		return usr;
+		return this.usr;
 	}
 	
 	public void setUsr(String name) {
@@ -66,7 +66,7 @@ public class User {
 		XMLEncoder encoder=null;
 		try{
 		encoder=new XMLEncoder(new BufferedOutputStream(
-				new FileOutputStream("User.xml")));
+				new FileOutputStream("Users.xml")));
 		}catch(FileNotFoundException fileNotFound){
 			System.out.println("ERROR: While Creating or Opening the File dvd.xml");
 		}
@@ -78,7 +78,7 @@ public class User {
 		XMLDecoder decoder=null;
 		try {
 			decoder=new XMLDecoder(new BufferedInputStream(
-					new FileInputStream("User.xml")));
+					new FileInputStream("Users.xml")));
 		} catch (FileNotFoundException e) {
 			System.out.println("ERROR: File dvd.xml not found");
 		}

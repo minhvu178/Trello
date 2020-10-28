@@ -1,4 +1,11 @@
 package concrete;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.*;
 
 public class Card {
@@ -155,6 +162,30 @@ public class Card {
 		} else if (!members.equals(other.members))
 			return false;
 		return true;
+	}
+	
+	public void storeToDisk() {
+		XMLEncoder encoder=null;
+		try{
+		encoder=new XMLEncoder(new BufferedOutputStream(
+				new FileOutputStream("Card.xml")));
+		}catch(FileNotFoundException fileNotFound){
+			System.out.println("ERROR: While Creating or Opening the File dvd.xml");
+		}
+		encoder.writeObject(this);
+		encoder.close();
+	}
+	
+	public static Card loadFromDisk() {
+		XMLDecoder decoder=null;
+		try {
+			decoder=new XMLDecoder(new BufferedInputStream(
+					new FileInputStream("Card.xml")));
+		} catch (FileNotFoundException e) {
+			System.out.println("ERROR: File dvd.xml not found");
+		}
+		Card usr = (Card) decoder.readObject();
+		return usr;
 	}
 	
 }

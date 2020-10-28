@@ -28,6 +28,13 @@
            </void>
           </object>
          </void>
+         <void method="add">
+          <object class="concrete.Card">
+           <void property="c_name">
+            <string>card3</string>
+           </void>
+          </object>
+         </void>
         </void>
         <void property="l_name">
          <string>list1</string>
@@ -62,13 +69,24 @@
       </void>
      </void>
      <void property="owner">
-      <string>minh</string>
+      <string>tram</string>
+     </void>
+     <void property="users">
+      <void method="add">
+       <string>minh</string>
+      </void>
+      <void method="add">
+       <string>ngoc</string>
+      </void>
      </void>
     </object>
    </void>
   </void>
+  <void property="pwd">
+   <string>2</string>
+  </void>
   <void property="usr">
-   <string>minh</string>
+   <string>tram</string>
   </void>
  </object>
 </java>

@@ -20,7 +20,7 @@ public class Board {
 	
 	public boolean addUser(String owner, User user) {
 		if (Objects.equals(owner, this.owner)) {
-			users.add(user.getUsr());
+			this.users.add(user.getUsr());
 			user.addBoard(this);
 			return true;
 		}
@@ -117,12 +117,17 @@ public class Board {
 	public void setLists(ArrayList<TList> lists) {
 		this.lists = lists;
 	}
+	
+	public void setUsers(HashSet<String> users) {
+		this.users = users;
+	}
 
 	/**
 	 * @return the users
 	 */
 	public HashSet<String> getUsers() {
-		return users;
+		System.out.println(this);
+		return this.users;
 	}
 	
 	public boolean equals(Board that) {

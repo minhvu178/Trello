@@ -27,7 +27,9 @@ class BoardTest {
 
 	@Test
 	void testAddUser() {
-		assertEquals(true, b1.addUser(M.getUsr(), T));
+		b1.addUser(M.getUsr(), T);
+		System.out.println(b1.getUsers());
+		assertTrue(b1.getUsers().contains("t"));
 		assertEquals(false, b1.addUser(T.getUsr(), M));
 		assertEquals(true, T.boards.contains(b1));
 	}
